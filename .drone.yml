@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: kaitest/alpine-jdk8:0.0.1
+    environment:
+      - GRADLE_USER_HOME=~/.gradle
+    commands:
+      - /bin/bash ./drone/docker_cloud.sh
