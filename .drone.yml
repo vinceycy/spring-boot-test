@@ -25,3 +25,24 @@ pipeline:
       "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
       "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/drone-308%40devops-186506.iam.gserviceaccount.com"
       }
+  deploy:
+    gke:
+      image: nytimes/drone-gke
+      zone: asia-east1-a
+      cluster: drone-test
+      token: >
+        {
+        "type": "service_account",
+        "project_id": "devops-186506",
+        "private_key_id": "d8a54b34b9060e72b4ef5c50678862870e425a4d",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDRICmMHMn4bL1c\nh5vws2mBN0ZR5fCeKpfTyaCQUkqQSP8DH4K82MgD8HZsNeqSiBXPzvheftRNAXID\nHG7WqO1S+jXEtYL5WTPtrWknd4lfX0UAElGe4Nh4NIlyC8H073W7bOUCV0eVM/qW\nTC2Zjb0DlOK98jmxn1QhbnK/XhtmHlqFHUkPo01MQI6tFpedGdsshyELIMAvd5P4\nQiUsP4oLiwuX+WMN6v2eUjsGRaCDOBiGzbzcfF30om2Q1FbI4y5mRreS+XWFzszP\nzVXKCOrwx7M6JrNAv87eBUEzi1afP93norxBzBVgMLuVgK2IHrZGXjTHhNC2yl6i\nrQ+vo4c/AgMBAAECggEABSaWegx6zwMX9jpNgB6zImBy+3EUku4NTO/s4/vFjrXg\nOLqjH4qeq+DVfIcmxBLU/V160ZJXIUm//ff1JOqxObd5m+Lf8HX0KPj58OO+qZow\n8AuuIKHSGG0sK3fDAF47gfEbLN/AdBonzwwznVIX4zQyEifv/YIlR34vFlaM3zV5\nyGgoIuIhK+uwENT40uEiHfov5uNUWrubN9GAdWjGsR8zdxLHyGCcqhrQEAfAgago\niPt9H8T2+KdEP6joulCbPpRCBiI/syai52+I2EyDY+1gce4L6u/pW38YciLxhfu9\nx1zAYF4fSGYG9YRGGlI2pMp0iBnFXHZULkjpG5AU8QKBgQDoeqxd/zmX7Ogb69O4\n03KCRT1dIGx+vC/Rm+axGKaHmpVDGlJOaQUvcb0Bdb/0JzgtrN+F6Dyt4tmKGMc8\nGv10LTMd8LGC6iQYDVvys6xgaMfrERoiEEDMoWc5pjplyB0HaLerS9+7DOF5Cg2p\nsqKL1H+SCIAo3jkyD7OcU9uNLwKBgQDmSJ7FoRAenoPunXcn3v3coEtzIHUzq0VV\n0FySkUYnVLh429HRjz1X9aISLarHY1JiF8423DvepsYueFEiGQdXH8D0lE7LL73w\nuUfRIFldmu93fgFAcLph7/8gLUcOWc2u6OHAIx+OLtYWw+zgenrt1YgLTgYJRB4k\noFW3sOrC8QKBgQDAkKRn87m0AzM7tXqZVOQ7zbiHhAz6aUy+tgE/XijKmBvdCld0\nxX7bDr49EFjglv/srY40r+pbKlWBEwcs3Tpl2e7GdRHEW8dr+NzZy0QUU5aNOoxH\n/Oh/143Wbb9fgYOyGGZSyDVZDdFR3ib1EpebdXf58Xqe33vG4MSoz7lDVwKBgQDC\nvPSvUbXs/sW4+qZyLCvn8BH96JvUNujqWcp/E6UMy6M4aUP1ADmy8YC9+Kpr9L0N\nQO5dDD8A2W3MjGin+hxv++VTrzs2rkfkkvp9ieqossYA+aibUvj6q1bHYiKtqxm5\n6SxHLCyaM1dOZx8g8dKU37ctQCzwlw8akBAMx+qvMQKBgQDK7Q+QL5F9zLP5EAPA\nTCGdnjXEUdpVtn14QW+Q4p+XRF1l3J1MqJ+gnn5JgQxgQMmOGcImmIS15J8Mv500\nfEwPoLxZiLpo37b8v0+m8jzrp3tA0rGIZ/jT0FZiGlXVq5U+j9LgNFt5sK43Jlg6\nto0zRACQWozEdPQI+gXQVGJd6g==\n-----END PRIVATE KEY-----\n",
+        "client_email": "drone-308@devops-186506.iam.gserviceaccount.com",
+        "client_id": "118431794760857561595",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/drone-308%40devops-186506.iam.gserviceaccount.com"
+        }
+      vars:
+        image: asia.gcr.io/devops-186506/spring-boot-test:${DRONE_TAG}
+        app: spring-boot-test
