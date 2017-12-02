@@ -6,6 +6,9 @@ pipeline:
     commands:
       - chmod 777 gradlew
       - ./gradlew build
+      - ls
+      - cd ./build/libs
+      - ls
   gcr:
     image: plugins/gcr
     registry: asia.gcr.io
