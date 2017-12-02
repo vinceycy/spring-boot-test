@@ -26,6 +26,8 @@ publish:
       "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
       "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/drone-308%40devops-186506.iam.gserviceaccount.com"
       }
+    when:
+      event: tag
 deploy:
   gke:
     image: nytimes/drone-gke
@@ -47,3 +49,5 @@ deploy:
     vars:
       image: asia.gcr.io/devops-186506/spring-boot-test:${DRONE_TAG}
       app: spring-boot-test
+    when:
+      event: tag
