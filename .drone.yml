@@ -11,7 +11,7 @@ pipeline:
     registry: asia.gcr.io
     repo: devops-186506/spring-boot-test
     dockerfile: ./Dockerfile
-    tags: latest
+    tags: ${DRONE_TAG}
     json_key: >
       {
       "type": "service_account",
