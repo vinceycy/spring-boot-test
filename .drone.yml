@@ -12,5 +12,4 @@ pipeline:
     repo: devops-186506/spring-boot-test
     dockerfile: ./Dockerfile
     tags: ${DRONE_TAG}
-    json_key: >
-      $google_credentials
+    secrets: [google_credentials]
