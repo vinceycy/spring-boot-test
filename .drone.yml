@@ -13,4 +13,4 @@ pipeline:
     dockerfile: ./Dockerfile
     tags: ${DRONE_TAG}
     json_key: >
-      $$google_credentials
+      $google_credentials
