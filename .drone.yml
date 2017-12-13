@@ -4,7 +4,7 @@ pipeline:
     commands:
       - chmod 777 gradlew
       - ./gradlew build
-  gcr:
+  publish:
     image: plugins/gcr
     registry: asia.gcr.io
     repo: devops-186506/spring-boot-test
