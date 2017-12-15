@@ -16,5 +16,5 @@ pipeline:
     zone: asia-east1-a
     cluster: test-cluster
     token: [google_credentials]
-    commands
+    commands:
       - kubectl get pods
