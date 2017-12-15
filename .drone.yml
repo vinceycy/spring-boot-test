@@ -11,3 +11,10 @@ pipeline:
     dockerfile: ./Dockerfile
     tags: ${DRONE_TAG}
     secrets: [google_credentials]
+  deploy:
+    image: nytimes/drone-gke
+    zone: asia-east1-a
+    cluster: test-cluster
+    token: [google_credentials]
+    commands
+      - kubectl get pods
