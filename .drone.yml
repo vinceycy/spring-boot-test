@@ -15,6 +15,6 @@ pipeline:
     image: nytimes/drone-gke
     zone: asia-east1-a
     cluster: test-cluster
-    token: [google_credentials]
+    secrets: [google_credentials]
     commands:
       - kubectl get pods
